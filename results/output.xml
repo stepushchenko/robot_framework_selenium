@@ -1,33 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on darwin)" generated="20230214 18:55:42.564" rpa="false" schemaversion="3">
-<suite id="s1" name="Googlesearch" source="/Users/iliastepushchenko/Code/robot_framework_selenium/tests/google/googlesearch.robot">
-<test id="s1-t1" name="Open and close Google Search page" line="8">
+<robot generator="Robot 6.0.2 (Python 3.11.1 on darwin)" generated="20230214 19:27:48.811" rpa="false" schemaversion="3">
+<suite id="s1" name="Search" source="/Users/iliastepushchenko/Code/robot_framework_selenium/tests/ebay/search.robot">
+<test id="s1-t1" name="Verify basic search functionality for eBay" line="8">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://google.com</arg>
+<arg>https://ebay.com</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230214 18:55:42.647" level="INFO">Opening browser 'chrome' to base url 'https://google.com'.</msg>
-<status status="PASS" starttime="20230214 18:55:42.647" endtime="20230214 18:55:51.912"/>
+<msg timestamp="20230214 19:27:48.893" level="INFO">Opening browser 'chrome' to base url 'https://ebay.com'.</msg>
+<status status="PASS" starttime="20230214 19:27:48.892" endtime="20230214 19:28:00.217"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@class='gh-tb ui-autocomplete-input']</arg>
+<arg>mobile</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230214 19:28:00.218" level="INFO">Typing text 'mobile' into text field '//input[@class='gh-tb ui-autocomplete-input']'.</msg>
+<status status="PASS" starttime="20230214 19:28:00.217" endtime="20230214 19:28:03.947"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//input[@id='gh-btn']</arg>
+<arg>[Return]</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230214 19:28:03.948" level="INFO">Sending key(s) ('[Return]',) to //input[@id='gh-btn'] element.</msg>
+<msg timestamp="20230214 19:28:13.887" level="INFO">Sending keys [Return]</msg>
+<status status="PASS" starttime="20230214 19:28:03.948" endtime="20230214 19:28:14.874"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Apple</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230214 19:28:16.066" level="INFO">Current page contains text 'Apple'.</msg>
+<status status="PASS" starttime="20230214 19:28:14.874" endtime="20230214 19:28:16.067"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230214 18:55:51.913" endtime="20230214 18:55:51.979"/>
+<status status="PASS" starttime="20230214 19:28:16.067" endtime="20230214 19:28:16.149"/>
 </kw>
-<doc>Google Search test</doc>
-<tag>regression</tag>
-<status status="PASS" starttime="20230214 18:55:42.646" endtime="20230214 18:55:51.979"/>
+<doc>This test case verify the basic search</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20230214 19:27:48.892" endtime="20230214 19:28:16.150"/>
 </test>
-<status status="PASS" starttime="20230214 18:55:42.565" endtime="20230214 18:55:51.980"/>
+<doc>Basic search functionality</doc>
+<status status="PASS" starttime="20230214 19:27:48.812" endtime="20230214 19:28:16.150"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">Functional</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Googlesearch">Googlesearch</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Search">Search</stat>
 </suite>
 </statistics>
 <errors>
